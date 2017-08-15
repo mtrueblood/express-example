@@ -29,7 +29,7 @@ app.get('/*', function(req, res) {
       version: req.query._storyblok ? 'draft': 'published'
     })
     .then((response) => {
-      res.render('root', { // changed to root because the default root component we created and you can ned is called "root"! Have a look in your components overview: http://app.storyblok.com/#!/me/spaces/40936/components/ 
+      res.render(response.body.story.content.component, { // changed to dynamic "base" component -> Since you've created 2 components "home" and "about" in your components overview: http://app.storyblok.com/#!/me/spaces/40936/components/ those are also "root" components and therefor can define another layout! :)
         story: response.body.story
       });
     })
