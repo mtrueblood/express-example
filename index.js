@@ -71,7 +71,7 @@ app.get('/*', function(req, res) {
     });
 });
 
-app.get('clear_cache', function(req, res) {
+app.get('/clear_cache', function(req, res) {
   Storyblok.flushCache();
   res.send('Cache flushed!');
 });
