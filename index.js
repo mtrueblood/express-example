@@ -22,6 +22,11 @@ let Storyblok = new StoryblokClient({
   }
 });
 
+app.get('/clear_cache', function(req, res) {
+  Storyblok.flushCache();
+  res.send('Cache flushed!');
+});
+
 // 3. Define a wilcard route to get the story mathing the url path
 app.get('/*', function(req, res) {
   var path = url.parse(req.url).pathname;
@@ -69,11 +74,6 @@ app.get('/*', function(req, res) {
     .catch((error) => {
       res.send(error);
     });
-});
-
-app.get('/clear_cache', function(req, res) {
-  Storyblok.flushCache();
-  res.send('Cache flushed!');
 });
 
 app.use('/public', express.static('public'));
