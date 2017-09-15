@@ -1,0 +1,20 @@
+// base
+@import "base/reset";
+@import "font-awesome/scss/font-awesome";
+
+// configs
+@import "config/colors";
+@import "config/fonts";
+@import "config/fontsize";
+@import "config/fontfamilies";
+
+// layouts
+@import "layouts/primary";
+@import "layouts/sections";
+
+// components
+@import "components/meganav";
+@import "components/panel";
+@import "components/header";
+@import "components/links";
+@import "components/footer";

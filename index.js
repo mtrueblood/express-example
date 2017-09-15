@@ -22,7 +22,13 @@ let Storyblok = new StoryblokClient({
   }
 });
 
-// 3. Define a wilcard route to get the story mathing the url path
+app.get('/clear_cache', function(req, res) {
+  Storyblok.flushCache();
+  res.send('Cache flushed!');
+});
+
+app.use('/public', express.static('public'));
+
 app.get('/*', function(req, res) {
   var path = url.parse(req.url).pathname;
   path = path == '/' ? 'home' : path; // this will allow to visit "home" from / only but still allow the editor to access the home "page" on localhost:4300/home
@@ -70,13 +76,6 @@ app.get('/*', function(req, res) {
       res.send(error);
     });
 });
-
-app.get('/clear_cache', function(req, res) {
-  Storyblok.flushCache();
-  res.send('Cache flushed!');
-});
-
-app.use('/public', express.static('public'));
 
 app.listen(4300, function() {
   console.log('Example app listening on port 4300!');

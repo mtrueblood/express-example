@@ -2,23 +2,51 @@
  {{{ story.content._editable }}}
 <div class="root">
   {{#if story.content.mainnav_displayed }}
-    <div class="meganav container">
-      {{#each meganav.body}}
-        {{> (lookup . 'component') }}
-      {{/each}}
-    </div>
+    <header class="meganav">
+      <div class="meganav-strip">
+        <a class="navicon-button toggle-meganav-overlay">
+          <div class="navicon"></div>
+        </a>
+        {{#if story.content.is_home }}
+          <h5 class="page-title {{ story.content.header_strip_theme }}">menu</h5>
+        {{else}}
+          <h5 class="page-title {{ story.content.header_strip_theme }}">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></h5>
+        {{/if}}
+      </div>
+      <div class="meganav-overlay">
+        <div class="outer-close toggle-meganav-overlay">
+          <a class="close"><span></span></a>
+        </div>
+        {{#if story.content.is_home }}
+          <h5 class="page-title light">menu</h5>
+        {{else}}
+          <h5 class="page-title light">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></h5>
+        {{/if}}
+        <nav>
+          {{#each meganav.body}}
+            <div>{{> (lookup . 'component') }}</div>
+          {{/each}}
+        </nav>
+      </div>
+    </header>
   {{/if}}
 
-  <div class="page container">
+  <div class="page">
     {{#each story.content.body}}
       {{> (lookup . 'component') }}
     {{/each}}
   </div>
 
   <div class="megafooter container">
-    {{#each megafooter.body}}
-      {{> (lookup . 'component') }}
-    {{/each}}
+    {{#if megafooter.content.body.socialinks}}
+      <div class="sociallinks">
+        {{#each megafooter.sociallinks.social_link}}
+          {{> (lookup . 'component') }}
+        {{/each}}
+      </div>
+    {{else}}
+      <p>there are no social links</p>
+    {{/if}}
   </div>
 
 </div>  

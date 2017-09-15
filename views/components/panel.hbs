@@ -1,0 +1,18 @@
+{{{ _editable }}}
+<div class="container full-width panel">
+    <div class="background" style="background-image: url('{{ background_image }}');"></div>
+    <div class="details text-{{ justification }} theme-{{ theme }}">
+        {{#if image }}
+            <img src={{ image }} alt="{{ headline }}" />
+        {{/if}}
+        <h1>{{ headline }}</h1>
+        <p>{{ subhead }}</p>
+    </div>
+    {{#if download_image }}
+        <div class="download text-{{ justification }} theme-{{ theme }}">
+            <p>{{ download_text }} &copy; Yes& LLC, 2017</p>
+            <p>Like it? Take it. Use it.</p>
+            <a href="{{ download_image }}" class="download" download><i class="fa fa-download"></i></a>
+        </div>
+    {{/if}}
+</div>

@@ -1,0 +1,79 @@
+header .branding {
+  padding: 20px 0;
+}
+header .logo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+header .logo img {
+  display: inline-block;
+  vertical-align: middle;
+}
+header .social {
+  text-align: center;
+}
+header .social a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  color: rgba(0, 0, 0, 0);
+  font-size: 0;
+  text-indent: -9999px;
+  background-image: url("../img/core/social-light.svg"), none;
+  background-size: 180px 30px;
+}
+header .social a.fb {
+  background-position: 0 0;
+}
+header .social a.twitter {
+  background-position: -30px 0;
+}
+header .social a.googleplus {
+  background-position: -60px 0;
+}
+header .social a.rss {
+  background-position: -90px 0;
+}
+header .social a.email {
+  background-position: -120px 0;
+}
+header .social a.search {
+  background-position: -150px 0;
+}
+header .social a:hover {
+  opacity: 0.4;
+}
+
+@media all and (min-width: 600px) {
+  header .branding {
+    padding-left: 60px;
+  }
+  header .logo {
+    margin-bottom: 0;
+    margin-left: -60px;
+    float: left;
+    width: 60px;
+    height: 60px;
+  }
+  header .logo img {
+    display: block;
+    margin: 0;
+  }
+  header .social {
+    padding: 15px 0;
+    float: right;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+.site-title {
+  padding: 5px 0;
+  background-color: black;
+  text-align: center;
+}
+.site-title h1 {
+  color: #ffffff;
+}

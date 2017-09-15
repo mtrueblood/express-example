@@ -1,0 +1,31 @@
+.panel {
+    height: 90vh;
+    .background {
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+    }
+    .details,
+    .download {
+        position: relative;
+        &.theme-light {
+            color: $brandColorGray;
+        }
+        &.theme-dark {
+            color: $brandColorBlue;
+        }
+        &.text-center {
+            text-align: center;
+        }
+        &.text-left {
+            text-align: left;
+        }
+        &.text-right {
+            text-align: right;
+        }
+    }
+}
