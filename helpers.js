@@ -52,9 +52,9 @@ module.exports = {
     return block.inverse(this);
   },
 
-  url: function(storylinks, storylink) {
+  url: function(storylink) {
     if(storylink.linktype == 'story') {
-      return storylinks[storylink.id].slug
+      return this.storylinks[storylink.id].slug
     } else {
       return storylink.url
     }
