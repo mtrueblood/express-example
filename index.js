@@ -24,6 +24,10 @@ let Storyblok = new StoryblokClient({
   }
 });
 
+Storyblok.get(`links`).then((response) => {
+  app.set('storylinks', response.body.links)
+});
+
 app.get('/clear_cache', function(req, res) {
   Storyblok.flushCache();
   res.send('Cache flushed!');
@@ -98,7 +102,8 @@ app.get('/*', function(req, res) {
         .then((response) => {
           res.render(response.body.story.content.component, {
             story: response.body.story,
-            global: globalData
+            global: globalData,
+            storylinks: app.get('storylinks')
           });
         })
 
