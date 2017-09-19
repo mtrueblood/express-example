@@ -50,5 +50,13 @@ module.exports = {
       return block.fn(this);
     }
     return block.inverse(this);
+  },
+
+  url: function(storylinks, storylink) {
+    if(storylink.linktype == 'story') {
+      return storylinks[storylink.id].slug
+    } else {
+      return storylink.url
+    }
   }
 }
