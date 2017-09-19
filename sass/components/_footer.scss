@@ -1,9 +1,17 @@
-// .megafooter {
-//   .top {
-
-//   }
-//   .bottom {
-
-//   }
-// }
+.megafooter {
+    background-color: $brandColorBlue;
+    color: $brandColorGray;
+    .top {
+        padding: 50px 0;
+        border-bottom: 1px solid #ffffff;
+    }
+    .bottom {
+        padding: 25px 0;
+        .navigation-links {
+            span {
+                display: none;
+            }
+        }
+    }
+}
 

@@ -5,11 +5,13 @@ const exphbs = require('express-handlebars');
 const url = require('url');
 const app = express();
 const StoryblokClient = require('storyblok-node-client');
+const helpers = require('./helpers');
 
 app.engine('.hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs',
-  partialsDir: 'views/components/'
+  partialsDir: 'views/components/',
+  helpers: helpers
 }));
 
 app.set('view engine', '.hbs');

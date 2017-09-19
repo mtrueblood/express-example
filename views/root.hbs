@@ -38,15 +38,24 @@
   </div>
 
   <div class="megafooter container">
-    {{#if megafooter.content.body.socialinks}}
-      <div class="sociallinks">
-        {{#each megafooter.sociallinks.social_link}}
+    <div class="top">
+      <img src="{{ global.logo }}" alt="Yes&" />
+    </div>
+    <div class="bottom">
+      <p>&copy; <span></span> {{ global.copyright }}</p>
+      <div class="navigation-links">
+        {{#each global.navigation_links}}
           {{> (lookup . 'component') }}
         {{/each}}
       </div>
-    {{else}}
-      <p>there are no social links</p>
-    {{/if}}
+      {{#if global.social_links}}
+        <div class="sociallinks">
+          {{#each global.social_links}}
+            {{> (lookup . 'component') }}
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
   </div>
 
 </div>  
