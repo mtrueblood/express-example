@@ -4,6 +4,7 @@ const marked = require('marked');
 
 // Handlebar helpers
 
+
 module.exports = {
   // a iterate over a specific portion of a list.
   // usage: {{#slice items offset="1" limit="5"}}{{name}}{{/slice}} : items 1 thru 6
@@ -54,7 +55,7 @@ module.exports = {
 
   url: function(storylink) {
     if(storylink.linktype == 'story') {
-      return this.storylinks[storylink.id].slug
+      return global.storylinks[storylink.id].slug
     } else {
       return storylink.url
     }
