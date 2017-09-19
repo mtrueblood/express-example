@@ -8,9 +8,9 @@
           <div class="navicon"></div>
         </a>
         {{#if story.content.is_home }}
-          <h5 class="page-title {{ story.content.header_strip_theme }}">menu</h5>
+          <p class="page-title {{ story.content.header_strip_theme }}">menu</p>
         {{else}}
-          <h5 class="page-title {{ story.content.header_strip_theme }}">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></h5>
+          <p class="page-title {{ story.content.header_strip_theme }}">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></p>
         {{/if}}
       </div>
       <div class="meganav-overlay">
@@ -23,7 +23,7 @@
           <h5 class="page-title light">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></h5>
         {{/if}}
         <nav>
-          {{#each meganav.body}}
+          {{#each global.navigation_links}}
             <div>{{> (lookup . 'component') }}</div>
           {{/each}}
         </nav>
