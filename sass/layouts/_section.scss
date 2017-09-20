@@ -1,0 +1,27 @@
+section {
+  &:last-child {
+    margin-bottom: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  &.parallax {
+    padding: 240px 0;
+    background-position: 0 0;
+  }
+  .container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    &.full-width {
+      max-width: 100%;
+    }
+  .row {
+    padding: 40px 0;
+  }
+}
+@media all and (min-width: 600px) {
+  &.parallax {
+    padding: 300px 0;
+  }
+}

@@ -1,0 +1,6 @@
+{{ _editable }}
+<div class="{{ width }}">
+    {{#each body}}
+        {{> (lookup . 'component') }}
+    {{/each}}
+</div>

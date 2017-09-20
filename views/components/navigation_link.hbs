@@ -1,5 +1,5 @@
 {{{ _editable }}}
-<a href="{{ navigation_link.anchor|url }}" class="" title="{{ title }}">
+<a href="{{#ifEquals name "home"}}/{{else}}{{ url anchor }}{{/ifEquals}}" class="{{#ifEquals story.content.page_name name}}active{{else}}not-active{{/ifEquals}}" title="{{ title }}">
     {{ name }}
     <span>{{ subtext }}</span>
 </a>

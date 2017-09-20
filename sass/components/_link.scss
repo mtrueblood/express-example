@@ -1,0 +1,8 @@
+a {
+  color: $brandColorTeal;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: $color-secondary;
+  }
+}

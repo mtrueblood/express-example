@@ -1,0 +1,6 @@
+{{ _editable }}
+<section>
+    {{#each body}}
+        {{> (lookup . 'component') }}
+    {{/each}}
+</section>

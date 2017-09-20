@@ -7,21 +7,25 @@
         <a class="navicon-button toggle-meganav-overlay">
           <div class="navicon"></div>
         </a>
-        {{#if story.content.is_home }}
-          <p class="page-title {{ story.content.header_strip_theme }}">menu</p>
-        {{else}}
-          <p class="page-title {{ story.content.header_strip_theme }}">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></p>
-        {{/if}}
+        <p class="page-title {{ story.content.header_strip_theme }}">
+          {{#ifEquals story.content.page_name "home" }}
+            menu
+          {{else}}
+            {{ story.content.page_name }} <span>({{ story.content.subtext }})</span>
+          {{/ifEquals}}
+        </p>
       </div>
       <div class="meganav-overlay">
         <div class="outer-close toggle-meganav-overlay">
           <a class="close"><span></span></a>
         </div>
-        {{#if story.content.is_home }}
-          <h5 class="page-title light">menu</h5>
-        {{else}}
-          <h5 class="page-title light">{{ story.content.page_name }} <span>({{ story.content.subtext }})</span></h5>
-        {{/if}}
+        <h5 class="page-title light">
+          {{#ifEquals story.content.page_name "home" }}
+            menu
+          {{else}}
+            {{ story.content.page_name }} <span>({{ story.content.subtext }})</span>
+          {{/ifEquals}}
+        </h5>
         <nav>
           {{#each global.navigation_links}}
             <div>{{> (lookup . 'component') }}</div>
@@ -37,9 +41,11 @@
     {{/each}}
   </div>
 
-  <div class="megafooter container">
-    <div class="top">
-      <img src="{{ global.logo }}" alt="Yes&" />
+  <div class="megafooter container full-width">
+    <div class="top text-center">
+      <div class="inner">
+        <img src="{{ global.logo }}" alt="Yes&" />
+      </div>
     </div>
     <div class="bottom">
       <p>&copy; <span></span> {{ global.copyright }}</p>
@@ -49,7 +55,7 @@
         {{/each}}
       </div>
       {{#if global.social_links}}
-        <div class="sociallinks">
+        <div class="social-links">
           {{#each global.social_links}}
             {{> (lookup . 'component') }}
           {{/each}}

@@ -2,11 +2,28 @@
     background-color: $brandColorBlue;
     color: $brandColorGray;
     .top {
-        padding: 50px 0;
-        border-bottom: 1px solid #ffffff;
+        .inner {
+            padding: 100px 0;
+            max-width: 90%;
+            margin: 0 auto;
+            border-bottom: 1px solid #ffffff;
+            img {
+                max-width: 200px;
+            }
+        }
     }
     .bottom {
         padding: 25px 0;
+        .navigation-links,
+        .social-links {
+            a,
+            i {
+                color: $brandColorGray;
+            }
+            i {
+                font-size: 1.5em;
+            }
+        }
         .navigation-links {
             span {
                 display: none;
@@ -14,4 +31,3 @@
         }
     }
 }
-
